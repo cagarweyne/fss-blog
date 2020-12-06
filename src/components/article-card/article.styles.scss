@@ -1,0 +1,35 @@
+.single-article-card {
+  background-color: rgb(255, 255, 255);
+  box-shadow: rgba(10, 10, 10, 0.1) 0px 0.5em 1em -0.125em, rgba(10, 10, 10, 0.02) 0px 0px 0px 1px;
+  color: rgb(74, 74, 74);
+  max-width: 100%;
+  padding: 10px;
+  height: 130px;
+  cursor: pointer;
+
+  display: flex;
+
+
+  .post-image {
+    // 
+    flex: 0 0 150px;
+  }
+
+  .post-details {
+    // width: 300px;
+  }
+
+  .post-title-date-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .blog-title {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .blog-date {
+    font-weight: normal;
+  }
+}

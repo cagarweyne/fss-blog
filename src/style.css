@@ -83,10 +83,6 @@ body {
   color: var(--color-text);
 }
 
-footer {
-  padding: var(--spacing-6) var(--spacing-0);
-}
-
 hr {
   background: var(--color-accent);
   height: 1px;
@@ -330,4 +326,9 @@ a:focus {
   ol {
     list-style-position: inside;
   }
+}
+
+.homepage {
+  width: 70%;
+  margin: 0 auto;
 }

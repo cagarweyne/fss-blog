@@ -1,0 +1,56 @@
+header {
+  margin: 1.25rem 1.5rem;
+  padding-top: 1rem;
+}
+
+.navigation-links {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background-color: #fff;
+  transition: background-color .3s ease-out;
+}
+
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+header .logo-container img {
+  width: 275px;
+}
+
+
+header .menu-items ul {
+  list-style: none;
+  margin: 0;
+}
+
+header .menu-items ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+header .menu-items a, #signout {
+  display: inline-block;
+  font-family: Raleway,sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #818a91;
+  transition: color .2s linear,line-height .2s linear;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#signout {
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
