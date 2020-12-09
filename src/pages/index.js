@@ -1,10 +1,12 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Bio from "../components/bio"
-import Layout from "../components/layout/layout"
-import SEO from "../components/seo"
-import ArticleCard from '../components/article-card/article-card'
-import './index.styles.scss'
+import React from "react";
+import { graphql } from "gatsby";
+import Bio from "../components/bio";
+import Layout from "../components/layout/layout";
+import Header from '../components/header/header';
+import Footer from '../components/footer/footer';
+import SEO from "../components/seo";
+import ArticleCard from '../components/article-card/article-card';
+import './index.styles.scss';
 
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -25,19 +27,22 @@ const BlogIndex = ({ data, location }) => {
   }
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
-      <ol style={{ listStyle: `none` }}>
-        {posts.map(post => {
-          const { fields: { slug }, frontmatter: { date, description, title }, excerpt } = post
-          return (
-          <ArticleCard 
-            {...{ title, slug, data, description, excerpt, date }} 
-          />
-          )
-        })}
-      </ol>
-    </Layout>
+    <>
+      <Header />
+      <h1 className="home-page-h1">Latest Tutorials</h1>
+      <div className="homepage-wrapper">
+        {/* <SEO title="All posts" /> */}
+          {posts.map(post => {
+            const { fields: { slug }, frontmatter: { date, description, title }, excerpt } = post
+            return (
+            <ArticleCard 
+              {...{ title, slug, data, description, excerpt, date }} 
+            />
+            )
+          })}
+      </div>
+      <Footer />
+    </>
   )
 }
 

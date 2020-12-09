@@ -1,35 +1,45 @@
-.single-article-card {
-  background-color: rgb(255, 255, 255);
+// Card styles 
+.card {
+  width: 230px;
   box-shadow: rgba(10, 10, 10, 0.1) 0px 0.5em 1em -0.125em, rgba(10, 10, 10, 0.02) 0px 0px 0px 1px;
-  color: rgb(74, 74, 74);
-  max-width: 100%;
-  padding: 10px;
-  height: 130px;
-  cursor: pointer;
-
-  display: flex;
-
-
-  .post-image {
-    // 
-    flex: 0 0 150px;
-  }
-
-  .post-details {
-    // width: 300px;
-  }
-
-  .post-title-date-container {
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .blog-title {
-    margin: 0;
-    margin-bottom: 10px;
-  }
-
-  .blog-date {
-    font-weight: normal;
-  }
+  color: #4a4a4a;
+  border-radius: 5px;
+  height: 305px;
+  margin-right: 20px;
+  margin-top: 10px;
+  align-self: center;
 }
+
+.card-body {
+  padding: 5px 30px 5px 10px;
+}
+
+.post-tag {
+  display: inline-block;
+  margin: 5px 0;
+  background-color: #51ADC4;
+  color: #fff;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 10px;
+}
+
+.post-title {
+  margin: 0;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.post-description {
+  font-size: 12px;
+  font-weight: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.post-image img {
+  width: 230px;
+  border-radius: 5px 5px 0 0;
+}
+// card styles

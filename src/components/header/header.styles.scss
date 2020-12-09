@@ -13,6 +13,12 @@ header {
   transition: background-color .3s ease-out;
 }
 
+@media screen and (min-width: 320px) and (max-width: 480px){
+  .navigation-links {
+    position: relative;
+  }
+}
+
 @media (min-width: 768px) {
   header {
     display: flex;

@@ -25,6 +25,7 @@ You can also write code blocks here!
 
 ```js
 const saltyDuckEgg = "chinese preserved food product"
+
 ```
 
 | Number | Title                                    | Year |
@@ -38,6 +39,23 @@ const saltyDuckEgg = "chinese preserved food product"
 This is a paragraph.
 
     This is a paragraph.
+
+```javascript
+import React from 'react';
+const component = () => {
+    
+    const isLoading = false; 
+    
+    return <div>Hello World</div>
+ 
+   // highlight-start
+  handleSubmit(event) {
+    alert('Your favorite flavor is: ' + this.state.value);
+    event.preventDefault();
+  }
+  // highlight-end
+}
+```
 
 # Header 1
 

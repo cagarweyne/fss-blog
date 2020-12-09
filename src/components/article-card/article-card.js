@@ -7,35 +7,25 @@ function truncate(str, n){
 };
 
 const ArticleCard = (props) => {
-  const { slug, date, description, title } = props
-  const excerpt = truncate(description, 120)
+  const { title, slug, data, description, date } = props
+  const excerpt = truncate(description, 120);
   return (
-    <li key={slug} className='single-article-card'>
-      <div className='post-image'>
-        Post Image
-      </div>
-      <div className='post-details'>
-        <div className='post-title-date-container'>
-          <h5 className='blog-title'>
-            <Link to={slug} itemProp="url">
-              <span itemProp="headline">{title}</span>
-            </Link>
-          </h5>
-          <small className='blog-date'>{date}</small>
+    <Link to={`${slug}`}>
+      <div className="card" key={slug}>
+        <div className="post-image">
+          <img src="http://fullstackstudent.com/content/images/2018/11/generator.jpg"/>
         </div>
-        
-        <section>
-          <p
-            className='blog-excerpt'
-            dangerouslySetInnerHTML={{
-              __html: excerpt,
-            }}
-            itemProp="description"
-          />
-        </section>
-        
+        <div className="card-body">
+          <small className="post-tag">
+          Development
+          </small>
+          <h5 className="post-title">{title}</h5>
+          <p className="post-description">{description}</p>
+          <small className="post-author">Abdi Cagarweyne</small>
+        </div>
       </div>
-    </li>
+    </Link>
+    
   );
 }
 
