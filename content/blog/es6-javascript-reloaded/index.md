@@ -4,8 +4,6 @@ date: "2015-03-23"
 description: Introduction to ES6
 ---
 
-# ES2015 JavaScript reloaded
-
 JavaScript has undergone some major changes in the latest update to the language, which was finalized in June 2015. You might have heard it by the name ES6 but this is the old name. The committee decided to change from version number to year of release to better reflect their plans to release a new version every year which is great news for JavaScript developers. In case you're not familiar, JavaScript is also called ECMAScript, and the current version which is supported by all modern browsers is ECMAScript 5.1, which was finalized in 2011. The name is also abbreviated to ES5 and as such you will see that the latest version being called ES6. 
 
 The name of the standard versioning of ES2015 was agreed, because the committe realized that they didn't want to limit the release of a standard update to once every few years, rather, suggestions were made that versioning will be based on year of release. For example the current version was finalized in June 2015, so the version will be called ES2015 to refer to the year in which the standard was finalized. All future versioning will be referred to in this way, ES20xx. 
@@ -55,11 +53,11 @@ if (!Object.is) {
 }
 ```
 
-The outer `if` statement checks to see whether the API is available, and this will only return true if it isn't implemented in the browser's JavaScript engine. There are many shims that you can use as a fallback behavior for older evironments and fortunately most of these shims are available in Babel. With the combination of transpiling and Shims/Polyfills, we can make use of the newesta and best features of JavaScript without worrying about backwards compatibility with older versions of JavaScript. This truly spells an exciting time for JS developers!
+The outer if statement checks to see whether the API is available, and this will only return true if it isn't implemented in the browser's JavaScript engine. There are many shims that you can use as a fallback behavior for older evironments and fortunately most of these shims are available in Babel. With the combination of transpiling and Shims/Polyfills, we can make use of the newesta and best features of JavaScript without worrying about backwards compatibility with older versions of JavaScript. This truly spells an exciting time for JS developers!
 
 # Block scope 
 
-One of the key features of the new JavaScript update is the ability to bind your variables to a scope. Before ES2015, you had to create an immediatelt invoked function expression to create "private" variables that weren't available outside the block in which they were declared. In ES2015 we can now create variables that are bound to blocks using `let`. The wonderful thing about using this feature is that all you need is a block scoping, so in other words all you need are a pair of curly braces `{  }`. So let's have a look at an example: 
+One of the key features of the new JavaScript update is the ability to bind your variables to a scope. Before ES2015, you had to create an immediatelt invoked function expression to create "private" variables that weren't available outside the block in which they were declared. In ES2015 we can now create variables that are bound to blocks using let. The wonderful thing about using this feature is that all you need is a block scoping, so in other words all you need are a pair of curly braces {  }. So let's have a look at an example: 
 
 ```javascript 
   function showNamesLength(names) {
@@ -79,7 +77,7 @@ One of the key features of the new JavaScript update is the ability to bind your
   
   showNamesLength(["Abdi", "Cagarweyne", "John", "Nick", "Kieran"]);// throws reference error on line 66
 ```
-The `let` varaiables are scoped to the block in which they were declared and cannot be accessed any where else. If you are familiar with other programming languages, then this might not mean much to you, but in the previous version all variable declaration were hoisted to the top by the JS engine.Let's look at an example to see how `let` behaves differently to using `var`. If we use the same function, but this time use `var` instead of `let`: 
+The let varaiables are scoped to the block in which they were declared and cannot be accessed any where else. If you are familiar with other programming languages, then this might not mean much to you, but in the previous version all variable declaration were hoisted to the top by the JS engine.Let's look at an example to see how let behaves differently to using var. If we use the same function, but this time use var instead of let: 
 
 ```javascript 
   function showNamesLength(names) {
@@ -100,9 +98,9 @@ The `let` varaiables are scoped to the block in which they were declared and can
   showNamesLength(["Abdi", "Cagarweyne", "John", "Nick", "Kieran"]);// console logs undefined
 ```
 
-If we run this function, you will see that it doesn't throw a reference error, and instead writes to the console `undefined`. This is because when we use `var` instead of `let` all of the variables get hoisted up to the top of the function before the code is executed line by line. All variables get assigned undefined until they are explicitly assigned a value in the code. Since the code inside the `if` block doesn't get executed the variable moreThanFive doesn't get assigned the string, it stll contains undefined and this is what is printed out to the console when the line of code: `console.log(moreThanfive)` is executed.  
+If we run this function, you will see that it doesn't throw a reference error, and instead writes to the console: undefined. This is because when we use var instead of let all of the variables get hoisted up to the top of the function before the code is executed line by line. All variables get assigned undefined until they are explicitly assigned a value in the code. Since the code inside the if block doesn't get executed the variable moreThanFive doesn't get assigned the string, it stll contains undefined and this is what is printed out to the console when the line of code: `console.log(moreThanfive)` is executed.  
 
-## Using `let` in for loops
+## Using let in for loops
 
 One very useful feature of using `let` is when you use it with for loops. To demonstrate this, we'll use an example that you have probably seen when concering closures in JS: 
 
@@ -119,9 +117,9 @@ funcs[4](); //logs 5
 
 ```
 
-When we use `var` in a for loop like this in a closure, each function will close over the last instance of the value in `i` since there is only one `i` available in the scope. Hence the reason why when we invoke any of the functions in the array, 5 is logged to the console, since this is the last variable in which the functions closed over after the test for `i<5` returned false.
+When we use var in a for loop like this in a closure, each function will close over the last instance of the value in i since there is only one i available in the scope. Hence the reason why when we invoke any of the functions in the array, 5 is logged to the console, since this is the last variable in which the functions closed over after the test for i<5 returned false.
 
-Using `let` instead of `var` in this case solves the problem nicely and the functions behave as you would expect. Let's change the `var` to `let` in the same code above and see what happens when we invoke any of the functions in the array: 
+Using let instead of var in this case solves the problem nicely and the functions behave as you would expect. Let's change the var to let in the same code above and see what happens when we invoke any of the functions in the array: 
 
 ```javascript 
 var funcs = []; 
@@ -135,15 +133,15 @@ funcs[2](); //this logs 2 to the console.
 funcs[4](); //this logs 4 to the console.
 
 ```
-Using `let` solves this problem of shared variable in the scope, `i` is redclared for each iteration of the loop. this means that each function that is pushed to the funcs array will close over that instance of `i` and not the last value that is assigned before the iteration comes to an end. 
+Using let solves this problem of shared variable in the scope, i is redclared for each iteration of the loop. this means that each function that is pushed to the funcs array will close over that instance of i and not the last value that is assigned before the iteration comes to an end. 
 
-## A few gotchas with `let` 
+## A few gotchas with let
 
-As we have seen `let` can be very useful in some instances, but there are a few things that we need to be aware of when using it: 
+As we have seen let can be very useful in some instances, but there are a few things that we need to be aware of when using it: 
 
-####You cannot access a `let` variable earlier than its declaration 
+####You cannot access a let variable earlier than its declaration 
 
-Coming from ES5, we are used to the fact that `var` declared variables are hoisted to the top and are attached to the entire enclosing function. Let's take a look at what we mean in code: 
+Coming from ES5, we are used to the fact that var declared variables are hoisted to the top and are attached to the entire enclosing function. Let's take a look at what we mean in code: 
 
 ```javascript 
 
@@ -155,12 +153,12 @@ var foo = "hello";
 let bar = "world"; 
 
 ```
-Accessing a `let` variable earlier than it's declaration generates a ReferenceError, this is also referred to as a Temporal Dead Zone (TDZ). TDZ is not an offical term form the ECMASCript specificaton, but it is a name given by the JavaScript community to describe the behavior of non-hoisting variables of `let` and also, as we will come to see next, `const`.
+Accessing a let variable earlier than it's declaration generates a ReferenceError, this is also referred to as a Temporal Dead Zone (TDZ). TDZ is not an offical term form the ECMASCript specificaton, but it is a name given by the JavaScript community to describe the behavior of non-hoisting variables of let and also, as we will come to see next, const.
 
 
-####You cannot redclare `let` twice in the same scope or sharing the same identifier 
+####You cannot redclare let twice in the same scope or sharing the same identifier 
 
-declaring a `let` variable twice in the same scope will generate an error, let' see what we mean: 
+declaring a let variable twice in the same scope will generate an error, let' see what we mean: 
 
 ```javascript 
 
@@ -170,7 +168,7 @@ let foo = "world"; //generates an error: SyntaxError: Identifier 'foo' has alrea
 
 ```
 
-Likewise, if we try to use the same identifier but for a `let` variable it throws an error: 
+Likewise, if we try to use the same identifier but for a let variable it throws an error: 
 
 ```javascript
 
@@ -182,17 +180,17 @@ let foo = "world"; //generates error: SyntaxError: Identifier 'foo' has already 
 
 # const
 
-Another great addition to the JS language is the variable `const` declaration. `const` creates constants and this means that value cannot be changed once it has been set. This is something that was badly needed in JS, as developers had to bec careful that they didn't reset a constant further down their program code. When using `const` you must initialize it on declaration, so if you just declare a `const` like this: 
+Another great addition to the JS language is the variable const declaration. const creates constants and this means that value cannot be changed once it has been set. This is something that was badly needed in JS, as developers had to bec careful that they didn't reset a constant further down their program code. When using const you must initialize it on declaration, so if you just declare a const like this: 
 
 ```javascript
 const API_KEY; //error: SyntaxError: Missing initializer in const declaration
 ```
-This causes a syntax, and in the error message it tells exactly why the error occured. So the correct way to use a `const` is to initialize it on declaration like so: 
+This causes a syntax, and in the error message it tells exactly why the error occured. So the correct way to use a const is to initialize it on declaration like so: 
 
 ```javascript 
 const API_KEY = '123'; //no error this time
 ```
-One of the key uses of `const` is that the value cannot be reassigned after its declaration, and this is something that is desriable  if you wanted a variable to never be reassigned inadvertently later on. So if you create `const` and then try to reassign it with another value it will throw an error: 
+One of the key uses of const is that the value cannot be reassigned after its declaration, and this is something that is desriable  if you wanted a variable to never be reassigned inadvertently later on. So if you create const and then try to reassign it with another value it will throw an error: 
 
 ```javascript
 const name = 'Daniel';
@@ -209,7 +207,7 @@ names.push('Abdi');//works as expected without throwing error
 
 console.log(names[2]); //prints 'Abdi'
 ```
-`const`s share a few similarites with `let` in that they are also block scoped, so this means that they are not accessible outside their block scope. Also, you cannot use the same identifier that has eithe been used with a `var` or `let` variable. 
+const shares a few similarites with let in that they are also block scoped, so this means that they are not accessible outside their block scope. Also, you cannot use the same identifier that has eithe been used with a var or let variable. 
 
 # Functions 
 
@@ -376,7 +374,7 @@ function sum(num1, num2, num3) {
 sum(...numbers); 
 
 ```
-The spread operator uses exactly the same syntax as the rest operator, however, it behaves differently depending on where it is used. Here we are calling the sum function and passing it our arguments using the spread operator. The operator spreads out each of the contents into individual parts and then the function merely adds up these individual values. You could think of it as acting like the `apply` method on arrays. So, if we used `apply` instead we would get the same effect: 
+The spread operator uses exactly the same syntax as the rest operator, however, it behaves differently depending on where it is used. Here we are calling the sum function and passing it our arguments using the spread operator. The operator spreads out each of the contents into individual parts and then the function merely adds up these individual values. You could think of it as acting like the apply method on arrays. So, if we used apply instead we would get the same effect: 
 
 ```javascript 
 let numbers = [1, 2, 3]; 
@@ -387,7 +385,7 @@ function sum(num1, num2, num3) {
 
 sum.apply(null, numbers); 
 ```
-You can also use the spread operator in place of the `concat` method: 
+You can also use the spread operator in place of the concat method: 
 
 ```javascript 
 let a = [2,3,4];
@@ -398,7 +396,7 @@ console.log( b ); // [1,2,3,4,5]
 
 ### Arrow functions
 
-Another fantastic addition to the language are arrow functions. If you are familiar with CoffeeScript the this is a great addition for you. Not only do fat arrows make your code more terse, but they also help address one of the most confusing parts of JS, the `this` context. Arrow functions are incfedibly easy to create and at first glance you would have to look carefully to understand that it is in fact a function: 
+Another fantastic addition to the language are arrow functions. If you are familiar with CoffeeScript the this is a great addition for you. Not only do fat arrows make your code more terse, but they also help address one of the most confusing parts of JS, the this context. Arrow functions are incfedibly easy to create and at first glance you would have to look carefully to understand that it is in fact a function: 
 
 ```javascript 
 var foo = (a, b) => a * b; 
@@ -443,9 +441,9 @@ var foo = function() {
 ```
 It is worth keeping in mind that arrow functions will always be function expressions and are also anonymous function expressions. 
 
-#### Binding of `this` with arrrow functions
+#### Binding of this with arrrow functions
 
-If you have done any noteworthy coding with JS, then you will have come across the issue with the `this` keyword. This was a particular point of confusion when it comes to programming wit the `this` keyword and has generated a lot of complaints from the developer community. As a result, the ES2015 implementation addressed this issue with the introduction of the arrow functions. To understand what the problem with the `this` keyword was in ES5, let's have a look at an example: 
+If you have done any noteworthy coding with JS, then you will have come across the issue with the this keyword. This was a particular point of confusion when it comes to programming with the this keyword and has generated a lot of complaints from the developer community. As a result, the ES2015 implementation addressed this issue with the introduction of the arrow functions. To understand what the problem with the this keyword was in ES5, let's have a look at an example: 
 
 ```javascript
 var person = {
@@ -458,7 +456,7 @@ var person = {
 
 person.getFullName();//prints Abdi Cagarweyne
 ```
-The above object gas has two properties and a method, which simply logs to the console the `firstname` and `lastname` propertis. This is all well and good and the `this` context works just fine. However, you will run into problems when you change contexts or closures come into the equation, for example: 
+The above object gas has two properties and a method, which simply logs to the console the firstname and lastname propertis. This is all well and good and the this context works just fine. However, you will run into problems when you change contexts or closures come into the equation, for example: 
 
 ```javascript 
 var person = {
@@ -476,7 +474,12 @@ var person = {
 
 person.getFullName();//undefined undefined
 ```
-When we call the getFullName method, we get `undefined undefined`, this is the not the behavior that we expected and this is one of the quirks of JS. To fix this we have two options, we can use the `var self = this` hack: 
+When we call the getFullName method, we get undefined undefined, this is the not the behavior that we expected and this is one of the quirks of JS. To fix this we have two options, we can use:
+
+```
+`var self = this`;
+```
+This is a hack around the issue with the this keyword:
 
 ```javascript 
 var person = {
@@ -496,9 +499,9 @@ var person = {
 person.getFullName();//Abdi Cagarweyne
 ```
 
-When we reference the context of this by assigning it to a variable inside the outer function, we will have access to inside the inner functions via a closure. So, in order to keep the context we simply use the `self` instead of the function's `this` keyword, which points to the global window object in the example above. 
+When we reference the context of this by assigning it to a variable inside the outer function, we will have access to inside the inner functions via a closure. So, in order to keep the context we simply use the self instead of the function's this keyword, which points to the global window object in the example above. 
 
-We can also fix the problem with `this` using the `bind` method that is available on functions:
+We can also fix the problem with this using the bind method that is available on functions:
 
 ```javascript 
 var person = {
@@ -517,7 +520,7 @@ var person = {
 person.getFullName();//Abdi Cagarweyne
 ```
 
-ES2015 enables us to eliminate much of the frustrations with the `this` keyword in JS by using fat arrow functions. So, we can rewrite the above examples using arrow functions and also address the issue of the value of `this`: 
+ES2015 enables us to eliminate much of the frustrations with the this keyword in JS by using fat arrow functions. So, we can rewrite the above examples using arrow functions and also address the issue of the value of this: 
 
 ```javascript 
 
@@ -536,4 +539,4 @@ var person = {
 
 person.getFullName();//Abdi Cagarweyne 
 ```
-By using the arrow function instead of a normal syntax with the `function` keyword, we get the behavior that is desired. This is because the `this` keyword binding in arrow functions is lexical. This means that arrow functions do not have a stand-alone `this` value binding, rather the value is decided by the closest containing non-arrow function and in our example that is the getFullName function. So, essentially the fat arrow => replaces the `var self = this;` or having to use the bind method.
+By using the arrow function instead of a normal syntax with the function keyword, we get the behavior that is desired. This is because the this keyword binding in arrow functions is lexical. This means that arrow functions do not have a stand-alone this value binding, rather the value is decided by the closest containing non-arrow function and in our example that is the getFullName function. So, essentially the fat arrow => replaces the hack `var self = this;` or having to use the bind method.

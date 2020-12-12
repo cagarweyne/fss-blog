@@ -1,4 +1,8 @@
 .homepage-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   a {
     text-decoration: none;
   }
@@ -7,15 +11,13 @@
 .home-page-h1 {
   text-align: center;
   margin-top: 150px;
+  margin-bottom: 0;
 }
 
 @media(min-width: 1024px) {
   .homepage-wrapper {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
     width: 70%;
-    margin: 50px auto;  
+    margin: 25px auto;
+    margin-bottom: 100px;  
   }
 } 

@@ -3,7 +3,8 @@ module.exports = {
     title: `Fullstackstudent Blog`,
     author: {
       name: `Abdi Cagarweyne`,
-      summary: `A Software Engineer based in London, UK.`,
+      summary: `A versatile fullstack JavaScript Developer with a passion for 
+      Software Engineering and solving challenging problems.`,
     },
     description: `The official Fullstackstudent Blog.`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
@@ -12,6 +13,12 @@ module.exports = {
     },
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-disqus`,
+      options: {
+        shortname: `http-fullstackstudent-com`
+      }
+    },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-source-filesystem`,
