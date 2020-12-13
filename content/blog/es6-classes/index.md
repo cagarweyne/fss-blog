@@ -1,7 +1,8 @@
 ---
 title: ES6 Classes
 date: "2015-03-29"
-description: ES6 classess 101
+description: We dive deep into ES6 classes, learn how to use classes
+featuredImage: './images/featured-image.jpg'
 ---
 
 If you've written any amount of substantial code you will have come across the need to encapsulate your code, and using JS constructor functions is the way this has been achieved. Let's say that we want to create an object that we can use to create instances of cars from. To do this we will typically create a constructor function: 

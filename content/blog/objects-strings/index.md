@@ -1,7 +1,8 @@
 ---
 title: Objects in ES6
 date: "2015-03-26"
-description: Objects and Strings 
+description: Objects and Strings have been updated in ES6
+featuredImage: './images/featured-image.jpg' 
 ---
 
 ES2015 has added a shorter syntax for creating object literals, in ES5 you would typicaly see something like this: 

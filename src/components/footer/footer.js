@@ -11,22 +11,22 @@ const Footer = () => {
           <div className='links-container'>
             <ul>
               <li>
-                <a href='http://www.fullstackstudent.com/about'>About</a>
+                <a href='/about'>About</a>
               </li>
               <li>
-                <a href='http://fullstackstudent.com/privacy-policy'>
+                <a href='/privacy-policy'>
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href='http://fullstackstudent.com/'>
+                <a href='/'>
                   Blog
                 </a>
               </li>
             </ul>
           </div>
           <div className='copyright-container'>
-            <p className='copyright-tag'>Copyright © {year} All Rights Reserved by <a href="http://fullstackstudent.com/">Fullstackstudent</a>.</p>
+            <p className='copyright-tag'>Copyright © {year} All Rights Reserved by <a href="/">Fullstackstudent</a>.</p>
           </div>
         </div>
       </div>

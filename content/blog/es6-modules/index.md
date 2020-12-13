@@ -1,7 +1,8 @@
 ---
 title: ES6 Modules
 date: "2015-04-05"
-description: ES6 Modules System
+description: Understand the ES6 Modules System in detail
+featuredImage: './images/featured-image.jpg'
 ---
 
 Modules are an integral part of your code, and it's what makes your app readable and maintainable in the long run. In fact, it is good practice to break up your code into modules where possible to make your code more readable and scalable in the future. Before the latest update to JavaScript there wasn't any native way of creating and using modules, all of the modules approaches that are currenty in use today such as CommonJS and AMD are not native to JavaScript. They are just ways in which we can emulate a module system using either CommonJS or AMD library. 

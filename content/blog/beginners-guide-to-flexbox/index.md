@@ -1,7 +1,8 @@
 ---
 title: Beginners Guide to Flexbox
 date: "2020-05-21"
-description: Complete guide to Flexbox
+description: Complete beginner's guide to Flexbox layout
+featuredImage: './images/featured-image.jpg'
 ---
 
 Flexbox is a new module in CSS3 that makes it easy to align elements in different directions and in different orders. Flexbox also allows you to change these alignments if necessary, this is really useful for responsove design. 

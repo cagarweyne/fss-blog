@@ -1,7 +1,8 @@
 ---
 title: Dynamic React Form with Formik 
 date: "2018-11-27"
-description: How to create dynamic form in React
+description: How to create dynamic form in React with Formik
+featuredImage: './images/featured-image.png'
 ---
 
 React has certainly made Front End development a whole lot more pleasant and has simplified a lot of complex things. Even though React makes developing client side a whole lot easier than before, creating robust forms that stand up to the needs of modern apps can be really difficult and complex. 

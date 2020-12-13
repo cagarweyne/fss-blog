@@ -11,7 +11,7 @@ import './index.styles.scss';
 const BlogIndex = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const posts = data.allMarkdownRemark.nodes
-
+  console.log(posts[0].frontmatter.featuredImage.childImageSharp.sizes.src);
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
@@ -33,10 +33,11 @@ const BlogIndex = ({ data, location }) => {
       <div className="homepage-wrapper">
         {/* <SEO title="All posts" /> */}
           {posts.map(post => {
-            const { fields: { slug }, frontmatter: { date, description, title }, excerpt } = post
+            const { fields: { slug }, frontmatter: { date, description, title, featuredImage }, excerpt } = post;
+            const { childImageSharp: { sizes: { src } } } = featuredImage;
             return (
-            <ArticleCard 
-              {...{ title, slug, data, description, excerpt, date }} 
+            <ArticleCard key={title}
+              {...{ title, slug, data, description, excerpt, date, src }} 
             />
             )
           })}
@@ -65,6 +66,13 @@ export const pageQuery = graphql`
           date(formatString: "MMMM DD, YYYY")
           title
           description
+          featuredImage {
+            childImageSharp {
+              sizes(maxWidth: 630) {
+                ...GatsbyImageSharpSizes
+              }
+            }
+          }
         }
       }
     }

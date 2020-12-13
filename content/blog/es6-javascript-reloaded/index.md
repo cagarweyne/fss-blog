@@ -1,7 +1,8 @@
 ---
 title: ES2015 JavaScript reloaded
 date: "2015-03-23"
-description: Introduction to ES6
+description: Introduction to all the new features in ES2015
+featuredImage: './images/featured-image.jpg'
 ---
 
 JavaScript has undergone some major changes in the latest update to the language, which was finalized in June 2015. You might have heard it by the name ES6 but this is the old name. The committee decided to change from version number to year of release to better reflect their plans to release a new version every year which is great news for JavaScript developers. In case you're not familiar, JavaScript is also called ECMAScript, and the current version which is supported by all modern browsers is ECMAScript 5.1, which was finalized in 2011. The name is also abbreviated to ES5 and as such you will see that the latest version being called ES6. 
